@@ -57,7 +57,3 @@ jobs:
 
       - name: terraform plan status
         id: step.plan.outcome == 'failure'
-
-      - name: terraform apply
-        id: apply
-        run: terraform apply
