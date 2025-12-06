@@ -10,9 +10,3 @@ variable "clusterName" {
   default     = "gitops-eks"
 }
 
-
-### dthasghfhss
-
-variable "sdf" {
-  
-}
