@@ -2,6 +2,25 @@ name: Terraform Destroy
 
 on:
   workflow_dispatch:  # allows manual trigger from GitHub UI
+  push:
+    branches:
+      - main
+      - stage
+    paths:
+      - terraform/**
+  pull_request:
+    branches:
+      - main
+    paths:
+      - terraform/**
+env:
+ # Credentials for deployment
+ AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+ AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+ # s3 bucket for the Terraform state
+ BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE }}
+ AWS_REGION: ap-south-1
+ EKS_CLUSTER: gitops-eks
 
 jobs:
   destroy:
