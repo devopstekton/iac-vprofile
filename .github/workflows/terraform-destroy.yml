@@ -26,6 +26,10 @@ jobs:
   destroy:
     name: Destroy Terraform Resources
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./terraform
 
     steps:
       - name: Checkout Repo
@@ -48,3 +52,7 @@ jobs:
 
       - name: Terraform Destroy
         run: terraform destroy -auto-approve
+
+
+
+        ######
