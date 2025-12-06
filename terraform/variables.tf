@@ -9,3 +9,10 @@ variable "clusterName" {
   type        = string
   default     = "gitops-eks"
 }
+
+
+### dthasghfhss
+
+variable "sdf" {
+  
+}
