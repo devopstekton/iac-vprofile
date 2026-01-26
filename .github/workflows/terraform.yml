@@ -18,10 +18,10 @@ env:
  # s3 bucket for the Terraform state
  BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE }}
  AWS_REGION: ap-south-1
- EKS_CLUSTER: gitops-eks
+ EKS_CLUSTER: gitopsapp-eks
 
 jobs:
-  terraform:
+  terraform: 
     name: "apply terraform code changes"
     runs-on: ubuntu-latest
     defaults:
